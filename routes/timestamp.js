@@ -20,7 +20,7 @@ router.get('/:id', function(req, res) {
 
   const id = moment(req.params.id, formats, true);
 
-  let timeObj = {
+  const timeObj = {
     unix: null,
     natural: null
   };
@@ -28,9 +28,6 @@ router.get('/:id', function(req, res) {
   if (id.isValid()) {
     timeObj.unix = +id.utc().format('X');
     timeObj.natural = id.utc().format('MMMM D, YYYY');
-  } else {
-    timeObj.unix = null;
-    timeObj.natural = null;
   }
 
   res.json(timeObj);
