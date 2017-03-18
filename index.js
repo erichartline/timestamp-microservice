@@ -1,6 +1,5 @@
 // establish variables
 const express = require('express');
-const chai = require('chai');
 const app = express();
 const port = process.env.PORT || 3000;
 
